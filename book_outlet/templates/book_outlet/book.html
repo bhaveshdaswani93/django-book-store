@@ -1,0 +1,20 @@
+<% extends 'base.html' %>
+
+<% block title %>
+  {{book.title}}
+<% endblock %>
+
+<% block content %>
+   <h1>{{block.title}}</h1>
+   <p>Written by: {{book.author}}</p>
+   <p>Rating: {{book.rating}}</p>
+   <p> 
+     This book is 
+     <% if book.is_bestselling %>
+       Best selling 
+     <% else %>
+      not best sellimg
+      <% endif %>
+       book
+   </p>
+<% endblock %>
