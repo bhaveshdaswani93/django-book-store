@@ -5,14 +5,15 @@ from .models import Book
 
 def index(request):
   books = Book.objects.all()
+  # print(books)
   
-  return render('book_outlet/index.html', {
+  return render(request, 'book_outlet/index.html', {
     'books': books
   })
   
 def book_detail(request, id):
   book = Book.objects.get(id=id)
   
-  return render('book_outlet/book.html', {
+  return render(request, 'book_outlet/book.html', {
     'book': book
   })

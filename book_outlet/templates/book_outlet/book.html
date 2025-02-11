@@ -1,20 +1,20 @@
-<% extends 'base.html' %>
+{% extends 'book_outlet/base.html' %}
 
-<% block title %>
+{% block title %}
   {{book.title}}
-<% endblock %>
+{% endblock %}
 
-<% block content %>
-   <h1>{{block.title}}</h1>
+{% block content %}
+   <h1>{{book.title}}</h1>
    <p>Written by: {{book.author}}</p>
    <p>Rating: {{book.rating}}</p>
    <p> 
      This book is 
-     <% if book.is_bestselling %>
+     {% if book.is_bestselling %}
        Best selling 
-     <% else %>
+     {% else %}
       not best sellimg
-      <% endif %>
+      {% endif %}
        book
    </p>
-<% endblock %>
+{% endblock %}
