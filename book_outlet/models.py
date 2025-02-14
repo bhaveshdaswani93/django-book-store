@@ -3,6 +3,15 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.urls import reverse
 from django.utils.text import slugify
 
+class Address(models.Model):
+  street = models.CharField(max_length=100)
+  city = models.CharField(max_length=50)
+  state = models.CharField(max_length=50)
+  zip = models.CharField(max_length=10)
+  
+  def __str__(self):
+    return f'{self.street}, {self.city}, {self.state} {self.zip}'
+
 class Author(models.Model):
   first_name = models.CharField(max_length=100)
   last_name = models.CharField(max_length=100)
